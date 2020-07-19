@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Chapter_03_QuickStart.DataManager;
 using Chapter_03_QuickStart.Models;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace Chapter_03_QuickStart.Controllers
 {
@@ -11,7 +12,7 @@ namespace Chapter_03_QuickStart.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IMusicManager _musicManager;
         private readonly InstrumentalMusicManager _insMusicManager;
-        public HomeController(ILogger<HomeController> logger, 
+        public HomeController(ILogger<HomeController> logger,
                               IMusicManager musicManager,
                               InstrumentalMusicManager insMusicManager)
         {
@@ -19,6 +20,13 @@ namespace Chapter_03_QuickStart.Controllers
             _musicManager = musicManager;
             _insMusicManager = insMusicManager;
         }
+
+        ////Dealing With Multiple Service Implementations Example
+        //private readonly IEnumerable<IMusicManager> _musicManagers;
+        //public HomeController(IEnumerable<IMusicManager> musicManagers)
+        //{
+        //    _musicManagers = musicManagers;
+        //}
 
         public IActionResult Index()
         {
