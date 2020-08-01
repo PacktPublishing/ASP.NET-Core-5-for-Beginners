@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningRazorSyntax", "Lear
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.MVC", "ToDo.MVC\ToDo.MVC.csproj", "{DAD8D5D8-3159-4E17-ABC6-21905D28B476}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.RazorPages", "ToDo.RazorPages\ToDo.RazorPages.csproj", "{6C79E1C1-F055-4C33-A2FE-0744227AAED1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DAD8D5D8-3159-4E17-ABC6-21905D28B476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAD8D5D8-3159-4E17-ABC6-21905D28B476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAD8D5D8-3159-4E17-ABC6-21905D28B476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C79E1C1-F055-4C33-A2FE-0744227AAED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C79E1C1-F055-4C33-A2FE-0744227AAED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C79E1C1-F055-4C33-A2FE-0744227AAED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C79E1C1-F055-4C33-A2FE-0744227AAED1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
