@@ -28,16 +28,16 @@ namespace Chapter_04_LearningRazorSyntax.Controllers
             ViewData["Message"] = "Razor is Awesome!";
 
             var beer = new Beer();
-            var model = beer.GetAllBeer();
-            return View(model);
+            var listOfBeers = beer.GetAllBeer();
+            return View(listOfBeers);
         }
 
         public IActionResult IndexNew()
         {
             var beer = new Beer();
             //returning only the first row
-            var model = beer.GetAllBeer().FirstOrDefault();
-            return View(model);
+            var listOfBeers = beer.GetAllBeer().FirstOrDefault();
+            return View(listOfBeers);
         }
 
         public IActionResult Privacy()
