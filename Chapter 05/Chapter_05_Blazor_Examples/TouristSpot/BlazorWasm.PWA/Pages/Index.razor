@@ -1,0 +1,80 @@
+﻿@page "/"
+
+@using System.IO
+@using BlazorInputFile
+@using Dto
+@inject HttpClient client
+
+<h1>Submit a new Tourist Destination Spot</h1>
+<EditForm Model="@NewPlace" OnValidSubmit="HandleValidSubmit">
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            Browse Image:
+            <InputFile OnChange="HandleSelection" />
+            <p class="alert-danger">@errorMessage</p>
+            <p>@status</p>
+            <p>
+                <img src="@imageUrl" style="width:300px; height:200px;">
+            </p>
+
+            Name:
+            <InputText class="form-control" id="name" @bind-Value="NewPlace.Name" />
+            Location:
+            <InputText class="form-control" id="location" @bind-Value="NewPlace.Location" />
+            About:
+            <InputTextArea class="form-control" id="about" @bind-Value="NewPlace.About" />
+            Review:
+            <InputNumber class="form-control" id="review" @bind-Value="NewPlace.Reviews" />
+
+            <br />
+            <button type="submit" class="btn btn-outline-primary oi-align-right">Post</button>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    string status;
+    string imageUrl;
+    string errorMessage;
+
+    async Task HandleSelection(IFileListEntry[] files)
+    {
+        errorMessage = string.Empty;
+        int maxFileSize = 2 * 1024 * 1024;
+        List<string> acceptedFileTypes = new List<string>() { "image/png", "image/jpeg", "image/gif" };
+        var file = files.FirstOrDefault();
+
+        if (file != null)
+        {
+            if (!acceptedFileTypes.Contains(file.Type))
+            {
+                errorMessage = "File is invalid.";
+                return;
+            }
+
+            if (file.Size > maxFileSize)
+            {
+                errorMessage = "File size exceeds 2MB";
+                return;
+            }
+
+            var ms = new MemoryStream();
+            await file.Data.CopyToAsync(ms);
+
+            status = $"Finished loading {file.Size} bytes from {file.Name}";
+
+            imageUrl = $"data:{file.Type};base64,{Convert.ToBase64String(ms.ToArray())}";
+
+        }
+    }
+
+    private CreatePlaceRequest NewPlace = new CreatePlaceRequest();
+
+    async Task HandleValidSubmit()
+    {
+        NewPlace.ImageDataUrl = imageUrl;
+        var result = await client.PostAsJsonAsync("https://localhost:44332/api/places", NewPlace);
+    }
+}
