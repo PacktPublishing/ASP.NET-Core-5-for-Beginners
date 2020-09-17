@@ -56,7 +56,7 @@ namespace PlaceApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseInMemoryDatabase();
+                app.InitializeSeededData();
             }
 
             app.UseHttpsRedirection();

@@ -34,9 +34,9 @@ else
                                 @foreach (var place in Places)
                                 {
                                     <li>
-                                        <a href="javascript:void(0)" 
+                                        <a href="javascript:void(0)"
                                            @onclick="(() => ViewDetails(place.Id))">
-                                           @place.Name
+                                            @place.Name
                                         </a>
                                     </li>
                                 }
@@ -97,3 +97,4 @@ else
         _placeService.OnChange -= StateHasChanged;
     }
 }
+

@@ -9,7 +9,7 @@ namespace PlaceApi.Db
         public static void AddInMemoryDatabaseService(this IServiceCollection services, string dbName)
                => services.AddDbContext<PlaceDbContext>(options => options.UseInMemoryDatabase(dbName));
 
-        public static void UseInMemoryDatabase(this IApplicationBuilder app)
+        public static void InitializeSeededData(this IApplicationBuilder app)
         {
             using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
             var service = serviceScope.ServiceProvider;
