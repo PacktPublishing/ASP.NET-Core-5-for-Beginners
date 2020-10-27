@@ -328,3 +328,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/Chapter 10/Chapter 10 Final/aws-beanstalk-tools-defaults.json
+/Chapter 10/Chapter_10_Cloud_Examples/aws-beanstalk-tools-defaults.json
+/Chapter 10/Chapter_10_Cloud_Examples/Properties/ServiceDependencies/Chapter10Final20201024200550 - Web Deploy
