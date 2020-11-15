@@ -1,7 +1,10 @@
 name: Build and Deploy ASP .NET Core Chapter 12 to GitHub Pages
 
 on:
-  # trigger the workflow only when a push happens in Chapter 12
+  push:
+    branches: [ master ]    
+    paths: 
+    - './Chapter 12/Chapter_12_GitHubActions_Examples/**'
 
 jobs:  
   build:    
