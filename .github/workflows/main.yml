@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]    
     paths: 
-    - './Chapter 12/**'
+    - 'Chapter 12/**'
 
 jobs:
   build:
