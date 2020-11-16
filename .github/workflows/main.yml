@@ -28,19 +28,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: checkout branch
+    - name: Create pages branch
       continue-on-error: true
       run: |
-          git config --global user.name "Jeff Chilberto"
+          git config --global user.name "GitHub Actions"
           git config --global user.email "chilberto@yahoo.com"                    
           git checkout -B pages    
-    - name: clear
+    - name: Clear pages branch
       continue-on-error: true
       run: |          
           git rm -rf . 
           git commit --allow-empty -m "root commit" 
           git push -f origin pages              
-    - name: Download a single artifact
+    - name: Download build artifact
       uses: actions/download-artifact@v2
       with:
         name: myWASM        
