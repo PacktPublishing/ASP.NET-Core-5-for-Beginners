@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]    
     paths: 
-    - './Chapter 12/Chapter_12_GitHubActions_Examples/**'
+    - './Chapter 12/**'
 
 jobs:
   build:
