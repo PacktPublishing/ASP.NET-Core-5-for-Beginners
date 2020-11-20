@@ -1,7 +1,5 @@
 ﻿@page "/"
 
-@using System.IO
-@using BlazorInputFile
 @using Dto
 @inject HttpClient client
 
@@ -12,11 +10,11 @@
             <DataAnnotationsValidator />
             <ValidationSummary />
             Browse Image:
-            <InputFile OnChange="HandleSelection" />
+            <InputFile OnChange="@HandleSelection" />
             <p class="alert-danger">@errorMessage</p>
             <p>@status</p>
             <p>
-                <img src="@imageUrl" style="width:300px; height:200px;">
+                <img src="@imageData" style="width:300px; height:200px;">
             </p>
 
             Name:
@@ -36,19 +34,19 @@
 
 @code {
     string status;
-    string imageUrl;
+    string imageData;
     string errorMessage;
 
-    async Task HandleSelection(IFileListEntry[] files)
+    async Task HandleSelection(InputFileChangeEventArgs e)
     {
         errorMessage = string.Empty;
         int maxFileSize = 2 * 1024 * 1024;
-        List<string> acceptedFileTypes = new List<string>() { "image/png", "image/jpeg", "image/gif" };
-        var file = files.FirstOrDefault();
-
-        if (file != null)
+        var acceptedFileTypes = new List<string>() { "image/png", "image/jpeg", "image/gif" };
+        var file = e.File;
+        
+        if (e.File != null)
         {
-            if (!acceptedFileTypes.Contains(file.Type))
+            if (!acceptedFileTypes.Contains(file.ContentType))
             {
                 errorMessage = "File is invalid.";
                 return;
@@ -60,12 +58,12 @@
                 return;
             }
 
-            var ms = new MemoryStream();
-            await file.Data.CopyToAsync(ms);
+            var buffer = new byte[file.Size];
+            await file.OpenReadStream().ReadAsync(buffer);
 
             status = $"Finished loading {file.Size} bytes from {file.Name}";
 
-            imageUrl = $"data:{file.Type};base64,{Convert.ToBase64String(ms.ToArray())}";
+            imageData = $"data:{file.ContentType};base64,{Convert.ToBase64String(buffer)}";
 
         }
     }
@@ -74,8 +72,9 @@
 
     async Task HandleValidSubmit()
     {
-        NewPlace.ImageDataUrl = imageUrl;
+        NewPlace.ImageData = imageData;
         var result = await client.PostAsJsonAsync("https://localhost:44332/api/places", NewPlace);
     }
 }
+
 
