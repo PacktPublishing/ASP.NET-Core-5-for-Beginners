@@ -9,7 +9,7 @@ namespace PlaceApi.Db.Models
         public string Location { get; set; }
         public string About { get; set; }
         public int Reviews { get; set; }
-        public string ImageDataUrl { get; set; }
+        public string ImageData { get; set; }
         public DateTime LastUpdated { get; set; }
     }
 }

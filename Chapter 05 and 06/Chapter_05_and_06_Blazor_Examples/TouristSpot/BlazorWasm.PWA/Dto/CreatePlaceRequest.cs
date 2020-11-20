@@ -12,6 +12,6 @@ namespace BlazorWasm.PWA.Dto
         public string About { get; set; }
         [Required]
         public int Reviews { get; set; }
-        public string ImageDataUrl { get; set; }
+        public string ImageData { get; set; }
     }
 }

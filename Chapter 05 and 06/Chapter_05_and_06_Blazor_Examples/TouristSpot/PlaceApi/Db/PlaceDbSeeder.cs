@@ -26,7 +26,7 @@ namespace PlaceApi.Db
                     Location = "Palawan, Philippines",
                     About = "Coron is one of the top destinations for tourists to add to their wish list.",
                     Reviews = 10,
-                    ImageDataUrl = GetImage("coron_island.jpg", "image/jpeg"),
+                    ImageData = GetImage("coron_island.jpg", "image/jpeg"),
                     LastUpdated = DateTime.Now
                 },
                 new Place
@@ -36,7 +36,7 @@ namespace PlaceApi.Db
                     Location = "Cebu, Philippines",
                     About = "Whale shark watching is the most popular tourist attraction in Cebu.",
                     Reviews = 3,
-                    ImageDataUrl = GetImage("oslob_whalesharks.png", "image/png"),
+                    ImageData = GetImage("oslob_whalesharks.png", "image/png"),
                     LastUpdated = DateTime.Now
                 }
             );

@@ -59,7 +59,7 @@ namespace PlaceApi.Controllers
             placeUpdate.Location = place.Location;
             placeUpdate.About = place.About;
             placeUpdate.Reviews = place.Reviews;
-            placeUpdate.ImageDataUrl = place.ImageDataUrl;
+            placeUpdate.ImageData = place.ImageData;
             placeUpdate.LastUpdated = DateTime.Now;
 
             _dbContext.Update(placeUpdate);
