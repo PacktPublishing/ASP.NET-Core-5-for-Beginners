@@ -48,11 +48,11 @@ With the following software and hardware list you can run all code files present
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781800567184_ColorImages.pdf).
 
-### Related products
-* Modern Web Development with ASP.NET Core 3 - Second Edition [[Packt]](https://www.packtpub.com/product/modern-web-development-with-asp-net-core-3-second-edition/9781789619768?utm_source=github&utm_medium=repository&utm_campaign=9781789619768) [[Amazon]](https://www.amazon.com/dp/1789619769)
-
 ## Code in Action
 Please visit the following to check out the CiA videos: http://bit.ly/3qDiqYY.
+
+### Related products
+* Modern Web Development with ASP.NET Core 3 - Second Edition [[Packt]](https://www.packtpub.com/product/modern-web-development-with-asp-net-core-3-second-edition/9781789619768?utm_source=github&utm_medium=repository&utm_campaign=9781789619768) [[Amazon]](https://www.amazon.com/dp/1789619769)
 
 * Practical Microservices with Dapr and .NET [[Packt]](https://www.packtpub.com/product/practical-microservices-with-dapr-and-net/9781800568372?utm_source=github&utm_medium=repository&utm_campaign=9781800568372) [[Amazon]](https://www.amazon.com/dp/1800568371)
 ## Get to Know the Author
