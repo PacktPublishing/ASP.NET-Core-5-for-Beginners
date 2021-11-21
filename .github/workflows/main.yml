@@ -17,28 +17,28 @@ build:
   uses: actions/upload-artifact@v2
   with:
     name: myWASM
-  path: ‘./Chapter 12/Chapter_12_GitHubActions_Examples/bin/Release/net5.0/publish/wwwroot’
+  path: './Chapter 12/Chapter_12_GitHubActions_Examples/bin/Release/net5.0/publish/wwwroot'
 deploy:
 needs: build
 runs-on: ubuntu-latest
 steps:
 - uses: actions/checkout@v2
 - name: Create pages branch
-continue-on-error: true
+  continue-on-error: true
   run: |
-  git config --global user.name “amluky”
-  git config --global user.email “amluky@gmail.com”
-  git checkout -B pages
+    git config --global user.name "GitHub Actions"
+    git config --global user.email "your@email.com"
+    git checkout -B pages
 - name: Clear pages branch
-continue-on-error: true
-run: |
-git rm -rf .
-git commit --allow-empty -m “root commit”
-git push -f origin pages
+  continue-on-error: true
+  run: |
+    git rm -rf .
+    git commit --allow-empty -m “root commit”
+    git push -f origin pages
 - name: Download build artifact
-uses: actions/download-artifact@v2
-with:
-name: myWASM
+  uses: actions/download-artifact@v2
+    with: 
+      name: myWASM
 - name: Commit changes
 run: |
 git add .
