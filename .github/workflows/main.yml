@@ -37,13 +37,13 @@ steps:
     git push -f origin pages
 - name: Download build artifact
   uses: actions/download-artifact@v2
-    with: 
-      name: myWASM
+  with: 
+    name: myWASM
 - name: Commit changes
-run: |
-git add .
-git commit -m “publishing WASM”
-git push --set-upstream origin pages
+  run: |
+    git add .
+    git commit -m “publishing WASM”
+    git push --set-upstream origin pages
 
 
 
