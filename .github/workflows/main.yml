@@ -15,9 +15,9 @@ jobs:
         run: dotnet publish -c Release './Chapter 12/Chapter_12_GitHubActions_Examples/Chapter12.csproj'
       - name: Save artifacts
         uses: actions/upload-artifact@v2
-          with:
-            name: myWASM
-            path: './Chapter 12/Chapter_12_GitHubActions_Examples/bin/Release/net5.0/publish/wwwroot'
+        with:
+          name: myWASM
+          path: './Chapter 12/Chapter_12_GitHubActions_Examples/bin/Release/net5.0/publish/wwwroot'
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -30,15 +30,15 @@ jobs:
           git config --global user.email "your@email.com"
           git checkout -B pages
       - name: Clear pages branch
-          continue-on-error: true
-          run: |
-            git rm -rf .
-            git commit --allow-empty -m "root commit"
-            git push -f origin pages
+        continue-on-error: true
+        run: |
+          git rm -rf .
+          git commit --allow-empty -m "root commit"
+          git push -f origin pages
       - name: Download build artifact
-          uses: actions/download-artifact@v2
-          with:
-            name: myWASM
+        uses: actions/download-artifact@v2
+        with:
+          name: myWASM
       - name: Commit changes
         run: |
           git add .
