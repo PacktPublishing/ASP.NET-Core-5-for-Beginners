@@ -26,8 +26,8 @@ steps:
 - name: Create pages branch
 continue-on-error: true
   run: |
-  git config --global user.name “GitHub Actions”
-  git config --global user.email “your@email.com”
+  git config --global user.name “amluky”
+  git config --global user.email “amluky@gmail.com”
   git checkout -B pages
 - name: Clear pages branch
 continue-on-error: true
