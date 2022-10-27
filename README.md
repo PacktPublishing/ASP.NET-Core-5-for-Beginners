@@ -66,3 +66,7 @@ Please visit the following to check out the CiA videos: http://bit.ly/3qDiqYY.
 **Ed Price** is a senior program manager in engineering at Microsoft, with an MBA in technology management. He has run Microsoft customer feedback programs for Azure development, Service Fabric, IoT, and Visual Studio. He was also a technical writer at Microsoft for 6 years, helped lead TechNet Wiki, and now leads efforts to publish Microsoft’s Reference Architectures on the Azure Architecture Center (focusing on web development scenarios). He is the co-author of four books, including Learn to Program with Small Basic and Hands-On Microservices with C# and .NET Core 3, Third Edition (from Packt).
 
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781800567184">https://packt.link/free-ebook/9781800567184 </a> </p>
