@@ -1,3 +1,15 @@
+
+### Get this product for $5
+
+<i>Packt is having its biggest sale of the year. Get this eBook or any other book, video, or course that you like just for $5 each</i>
+
+
+<b><p align='center'>[Buy now](https://packt.link/9781800567184)</p></b>
+
+
+<b><p align='center'>[Buy similar titles for just $5](https://subscription.packtpub.com/search)</p></b>
+
+
 # ASP.NET Core 5 for Beginners
 
 <a href="https://www.packtpub.com/product/asp-net-core-5-for-beginners/9781800567184?utm_source=github&utm_medium=repository&utm_campaign=9781800567184"><img src="https://static.packt-cdn.com/products/9781800567184/cover/smaller" alt="ASP.NET Core 5 for Beginners" height="256px" align="right"></a>
